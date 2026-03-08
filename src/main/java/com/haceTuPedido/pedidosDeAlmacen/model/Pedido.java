@@ -1,7 +1,7 @@
 package com.haceTuPedido.pedidosDeAlmacen.model;
 
+import com.haceTuPedido.pedidosDeAlmacen.enums.EstadoPedido;
 import jakarta.persistence.*;
-import jdk.jshell.Snippet;
 import lombok.*;
 
 import java.time.LocalDate;

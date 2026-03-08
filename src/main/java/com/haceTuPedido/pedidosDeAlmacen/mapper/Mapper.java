@@ -26,7 +26,7 @@ public class Mapper {
     return ProductoDTO.builder()
             .id(produto.getId())
             .nombre(produto.getNombre())
-            .categoria(produto.getCategoria())
+            .categoriaId(produto.getCategoria().getId())
             .marca(produto.getMarca())
             .unidadMedida(produto.getUnidadMedida())
             .peso(produto.getPeso())
@@ -75,7 +75,14 @@ public class Mapper {
 
 
     }
+    public static CategoriaDTO toDTO(Categoria categoria) {
 
+        return CategoriaDTO.builder()
+                .id(categoria.getId())
+                .nombre(categoria.getNombre())
+
+                .build();
+    }
 
 
 //    //Mapeo DetallesPedido a detalle pedidoDTOw

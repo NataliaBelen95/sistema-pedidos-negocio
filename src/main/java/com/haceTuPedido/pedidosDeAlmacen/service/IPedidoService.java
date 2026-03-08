@@ -1,10 +1,7 @@
 package com.haceTuPedido.pedidosDeAlmacen.service;
 
-import com.haceTuPedido.pedidosDeAlmacen.dto.NegocioDTO;
 import com.haceTuPedido.pedidosDeAlmacen.dto.PedidoDTO;
-import com.haceTuPedido.pedidosDeAlmacen.dto.ProductoDTO;
-import com.haceTuPedido.pedidosDeAlmacen.model.EstadoPedido;
-import org.springframework.stereotype.Service;
+import com.haceTuPedido.pedidosDeAlmacen.enums.EstadoPedido;
 
 import java.util.List;
 

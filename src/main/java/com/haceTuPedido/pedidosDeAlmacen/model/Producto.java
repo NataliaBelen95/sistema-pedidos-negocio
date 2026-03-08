@@ -1,9 +1,8 @@
 package com.haceTuPedido.pedidosDeAlmacen.model;
 
+import com.haceTuPedido.pedidosDeAlmacen.enums.UnidadMedida;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
 
 @Getter @Setter
 @AllArgsConstructor
@@ -20,14 +19,11 @@ public class Producto {
     @ManyToOne
     private Categoria categoria;
     private String marca;
+    @Enumerated(EnumType.STRING)
     private UnidadMedida unidadMedida;
     private double peso;
 
-    @OneToMany(mappedBy = "producto")
-    private List<ProductoProveedor> proveedores;
 
-    @OneToMany(mappedBy = "producto")
-    private List<ProductoNegocio> negocios;
 
 
 }

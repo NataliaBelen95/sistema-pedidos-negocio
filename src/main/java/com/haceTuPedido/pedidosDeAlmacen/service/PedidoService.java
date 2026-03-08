@@ -1,6 +1,7 @@
 package com.haceTuPedido.pedidosDeAlmacen.service;
 
 import com.haceTuPedido.pedidosDeAlmacen.dto.PedidoDTO;
+import com.haceTuPedido.pedidosDeAlmacen.enums.EstadoPedido;
 import com.haceTuPedido.pedidosDeAlmacen.exception.NotFoundException;
 import com.haceTuPedido.pedidosDeAlmacen.mapper.Mapper;
 import com.haceTuPedido.pedidosDeAlmacen.model.*;
@@ -11,9 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class PedidoService implements IPedidoService {

@@ -1,4 +1,4 @@
-package com.haceTuPedido.pedidosDeAlmacen.model;
+package com.haceTuPedido.pedidosDeAlmacen.enums;
 
 public enum EstadoPedido {
     ENVIADO,

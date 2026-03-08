@@ -3,7 +3,9 @@ package com.haceTuPedido.pedidosDeAlmacen.service;
 import com.haceTuPedido.pedidosDeAlmacen.dto.ProductoDTO;
 import com.haceTuPedido.pedidosDeAlmacen.exception.NotFoundException;
 import com.haceTuPedido.pedidosDeAlmacen.mapper.Mapper;
+import com.haceTuPedido.pedidosDeAlmacen.model.Categoria;
 import com.haceTuPedido.pedidosDeAlmacen.model.Producto;
+import com.haceTuPedido.pedidosDeAlmacen.repository.CategoriaRepository;
 import com.haceTuPedido.pedidosDeAlmacen.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,8 @@ public class ProductoService implements IProductoService {
 
     @Autowired
     private ProductoRepository repo;
+    @Autowired
+    private CategoriaRepository categoriaRepository;
 
     @Override
     public List<ProductoDTO> listarProductos() {
@@ -23,9 +27,11 @@ public class ProductoService implements IProductoService {
 
     @Override
     public ProductoDTO crearProducto(ProductoDTO productoDto) {
+        Categoria categoria = categoriaRepository.findById(productoDto.getCategoriaId())
+                .orElseThrow(() -> new RuntimeException("Categoría no encontrada"));
         var producto = Producto.builder()
                 .nombre(productoDto.getNombre())
-                .categoria(productoDto.getCategoria())
+                .categoria(categoria)
 //                .precio(productoDto.getPrecio())
                 .unidadMedida(productoDto.getUnidadMedida())
                 .peso(productoDto.getPeso())
@@ -35,11 +41,13 @@ public class ProductoService implements IProductoService {
 
     @Override
     public ProductoDTO editarProducto(Long id, ProductoDTO productoDto) {
+        Categoria categoria = categoriaRepository.findById(productoDto.getCategoriaId())
+                .orElseThrow(() -> new RuntimeException("Categoría no encontrada"));
            Producto p = repo.findById(id)
                    .orElseThrow(() -> new NotFoundException("Producto no encontrado"));
 
            p.setNombre(productoDto.getNombre());
-           p.setCategoria(productoDto.getCategoria());
+           p.setCategoria(categoria);
 //           p.setPrecio(productoDto.getPrecio());
            p.setUnidadMedida(productoDto.getUnidadMedida());
            p.setPeso(productoDto.getPeso());
