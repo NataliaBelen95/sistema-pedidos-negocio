@@ -17,7 +17,8 @@ public class Producto {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-
+    @ManyToOne
+    private Categoria categoria;
     private String marca;
     private UnidadMedida unidadMedida;
     private double peso;

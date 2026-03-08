@@ -1,5 +1,6 @@
 package com.haceTuPedido.pedidosDeAlmacen.dto;
 
+import com.haceTuPedido.pedidosDeAlmacen.model.ProductoProveedor;
 import lombok.*;
 
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.List;
 public class ProveedorDTO {
     private Long id;
     private String nombre;
+
+    List<ProductoProveedor> productos;
 
 
 }

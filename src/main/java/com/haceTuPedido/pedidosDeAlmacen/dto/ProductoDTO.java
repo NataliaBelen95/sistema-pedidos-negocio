@@ -1,7 +1,9 @@
 package com.haceTuPedido.pedidosDeAlmacen.dto;
 
 
+import com.haceTuPedido.pedidosDeAlmacen.model.Categoria;
 import com.haceTuPedido.pedidosDeAlmacen.model.UnidadMedida;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 import java.util.List;
@@ -15,7 +17,8 @@ public class ProductoDTO {
     private Long id;
     private String nombre;
 //    private int precio;
-    private String categoria;
+
+    private Categoria categoria;
     private String marca;
     private double peso;
     private UnidadMedida unidadMedida;

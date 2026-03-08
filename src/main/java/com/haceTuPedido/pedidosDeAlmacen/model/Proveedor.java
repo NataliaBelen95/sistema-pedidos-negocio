@@ -20,8 +20,8 @@ public class Proveedor {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-//    @OneToMany(mappedBy = "proveedor")
-//    private List<ProductoProveedor> productos = new ArrayList<>();
+    @OneToMany(mappedBy = "proveedor")
+    private List<ProductoProveedor> productosProveedor;
 
     private double precio;
 

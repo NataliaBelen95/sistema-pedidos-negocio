@@ -39,11 +39,7 @@ public class Mapper {
         return ProveedorDTO.builder()
                 .id(proveedor.getId())
                 .nombre(proveedor.getNombre())
-                .productos(proveedor.getProductos()
-                        .stream()
-                        .map(Mapper::toDTO)
-                        .collect(Collectors.toList())
-                )
+                .productos(proveedor.getProductosProveedor())
                 .build();
     }
 
