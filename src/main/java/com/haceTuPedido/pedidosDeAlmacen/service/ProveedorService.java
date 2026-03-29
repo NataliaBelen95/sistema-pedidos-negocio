@@ -38,7 +38,7 @@ public class ProveedorService implements IProveedorService {
     @Override
     public ProveedorDTO actualizarProveedor(Long id, ProveedorDTO proveedorDTO) {
         Proveedor p = repo.findById(id)
-                .orElseThrow(() -> new NotFoundException("negocio no encontrado"));
+                .orElseThrow(() -> new NotFoundException("proveedor no encontrado"));
 
         p.setNombre(proveedorDTO.getNombre());
         p.setCuit(proveedorDTO.getCuit());
