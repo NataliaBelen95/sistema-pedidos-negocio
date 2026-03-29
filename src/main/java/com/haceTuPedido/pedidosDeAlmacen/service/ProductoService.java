@@ -1,6 +1,7 @@
 package com.haceTuPedido.pedidosDeAlmacen.service;
 
 import com.haceTuPedido.pedidosDeAlmacen.dto.ProductoDTO;
+import com.haceTuPedido.pedidosDeAlmacen.enums.EnumCategoria;
 import com.haceTuPedido.pedidosDeAlmacen.exception.NotFoundException;
 import com.haceTuPedido.pedidosDeAlmacen.mapper.Mapper;
 import com.haceTuPedido.pedidosDeAlmacen.model.Categoria;
@@ -49,6 +50,7 @@ public class ProductoService implements IProductoService {
 
            p.setNombre(productoDto.getNombre());
            p.setCategoria(categoria);
+           p.setMarca(productoDto.getMarca());
 //           p.setPrecio(productoDto.getPrecio());
            p.setEnumUnidadMedida(productoDto.getEnumUnidadMedida());
            p.setPeso(productoDto.getPeso());
@@ -70,5 +72,13 @@ public class ProductoService implements IProductoService {
     @Override
     public ProductoDTO encontrarProductoPorId(Long id) {
         return repo.findById(id).map(Mapper::toDTO).orElse(null);
+    }
+
+    @Override
+    public List<ProductoDTO> encontrarPorCategoria(EnumCategoria  categoria) {
+        return repo.findByCategoriaNombre(categoria) // <--- Cero SQL
+                .stream()
+                .map(Mapper::toDTO)
+                .toList();
     }
 }

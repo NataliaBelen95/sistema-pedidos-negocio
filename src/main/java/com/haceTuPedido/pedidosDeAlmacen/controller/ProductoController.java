@@ -2,6 +2,7 @@ package com.haceTuPedido.pedidosDeAlmacen.controller;
 
 
 import com.haceTuPedido.pedidosDeAlmacen.dto.ProductoDTO;
+import com.haceTuPedido.pedidosDeAlmacen.enums.EnumCategoria;
 import com.haceTuPedido.pedidosDeAlmacen.service.IProductoService;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
@@ -50,4 +51,14 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.encontrarProductoPorId(id));
 
     }
+
+    /*traer por categoria nombre*/
+    @GetMapping("/categoria/{nombreCategoria}")
+    public ResponseEntity<List<ProductoDTO>> traerPorCategoria(@PathVariable String nombreCategoria) {
+        EnumCategoria categoriaEnum = EnumCategoria.valueOf(nombreCategoria.toUpperCase());
+        return ResponseEntity.ok(productoService.encontrarPorCategoria(categoriaEnum));
+
+    }
+
+
 }

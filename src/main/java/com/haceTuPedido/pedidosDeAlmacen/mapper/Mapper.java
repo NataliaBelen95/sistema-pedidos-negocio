@@ -41,6 +41,7 @@ public class Mapper {
         return ProveedorDTO.builder()
                 .id(proveedor.getId())
                 .nombre(proveedor.getNombre())
+                .cuit(proveedor.getCuit())
                 .productos(proveedor.getProductosProveedor())
                 .build();
     }

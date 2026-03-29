@@ -19,6 +19,7 @@ public class Proveedor {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+    private long cuit;
     private String nombre;
     @OneToMany(mappedBy = "proveedor")
     private List<ProductoProveedor> productosProveedor;
