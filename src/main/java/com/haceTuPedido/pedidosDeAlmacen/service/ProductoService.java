@@ -76,7 +76,7 @@ public class ProductoService implements IProductoService {
 
     @Override
     public List<ProductoDTO> encontrarPorCategoria(EnumCategoria  categoria) {
-        return repo.findByCategoriaNombre(categoria) // <--- Cero SQL
+        return repo.findByCategoriaNombre(categoria) //
                 .stream()
                 .map(Mapper::toDTO)
                 .toList();

@@ -36,7 +36,7 @@ public class PedidoController {
     }
 
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<PedidoDTO> editarPedido(@PathVariable Long id, @RequestBody PedidoDTO pedidoDTO) {
         return ResponseEntity.ok(pedidoService.editarPedido(id, pedidoDTO));
     }

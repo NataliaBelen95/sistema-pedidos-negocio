@@ -14,7 +14,7 @@ public class ProveedorDTO {
     private long cuit;
     private String nombre;
 
-    List<ProductoProveedor> productos;
+    List<ProductoProveedorDTO> productos;
 
 
 }

@@ -13,11 +13,11 @@ import lombok.*;
 public class ProductoProveedorDTO {
 
     private Long id;
-    private Producto producto;
-    private Proveedor proveedor;
+    private Long productoId;   // Solo el ID para cargar
+    private Long proveedorId;  // Solo el ID para cargar
+    private String nombreProducto; // Para mostrar en el Dashboard
+    private String nombreProveedor; // Para mostrar en el Dashboard
     private double precio;
-
-    private ProductoDTO productoDTO;
 
 
 }

@@ -34,7 +34,7 @@ import java.util.List;
         }
 
 
-        @PostMapping("/id")
+        @PutMapping("/{id}")
         public ResponseEntity<NegocioDTO> actualizarNegocio(@PathVariable Long id, @RequestBody NegocioDTO negocioDTO) {
             return ResponseEntity.ok(negocioService.actualizarNegocio(id, negocioDTO));
         }

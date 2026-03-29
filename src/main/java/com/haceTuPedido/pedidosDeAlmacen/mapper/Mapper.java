@@ -42,10 +42,25 @@ public class Mapper {
                 .id(proveedor.getId())
                 .nombre(proveedor.getNombre())
                 .cuit(proveedor.getCuit())
-                .productos(proveedor.getProductosProveedor())
+                .productos(proveedor.getProductosProveedor() != null ?
+                        proveedor.getProductosProveedor().stream().map(Mapper::toDTO).toList() : null)
                 .build();
     }
 
+
+    /*proveddor_prudcto*/
+    public static ProductoProveedorDTO toDTO(ProductoProveedor relacion) {
+        if (relacion == null) return null;
+
+        return ProductoProveedorDTO.builder()
+                .id(relacion.getId())
+                .productoId(relacion.getProducto().getId())
+                .proveedorId(relacion.getProveedor().getId())
+                .nombreProducto(relacion.getProducto().getNombre()) // Muy útil para la tabla
+                .nombreProveedor(relacion.getProveedor().getNombre()) // Muy útil para comparar
+                .precio(relacion.getPrecio())
+                .build();
+    }
 
 
     //Mapeo Pedido a PedidoDTO

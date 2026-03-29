@@ -1,7 +1,9 @@
 package com.haceTuPedido.pedidosDeAlmacen.service;
 
 import com.haceTuPedido.pedidosDeAlmacen.dto.NegocioDTO;
+import com.haceTuPedido.pedidosDeAlmacen.exception.NotFoundException;
 import com.haceTuPedido.pedidosDeAlmacen.mapper.Mapper;
+import com.haceTuPedido.pedidosDeAlmacen.model.Categoria;
 import com.haceTuPedido.pedidosDeAlmacen.model.Negocio;
 import com.haceTuPedido.pedidosDeAlmacen.model.Producto;
 import com.haceTuPedido.pedidosDeAlmacen.repository.NegocioRepository;
@@ -34,7 +36,14 @@ public class NegocioService implements INegocioService {
 
     @Override
     public NegocioDTO actualizarNegocio(Long id, NegocioDTO negocioDTO) {
-        return null;
+
+        Negocio n = repo.findById(id)
+                .orElseThrow(() -> new NotFoundException("negocio no encontrado"));
+
+        n.setNombre(negocioDTO.getNombre());
+        n.setDireccion(negocioDTO.getDireccion());
+        return Mapper.toDTO(repo.save(n));
+
     }
 
     @Override

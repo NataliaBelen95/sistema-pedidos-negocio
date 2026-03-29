@@ -34,7 +34,7 @@ public class ProductoController {
     }
 
 
-    @PostMapping("/{id}")
+    @PutMapping ("/{id}")
     public ResponseEntity<ProductoDTO> editarProducto(@PathVariable Long id, @RequestBody ProductoDTO productoDTO){
         return ResponseEntity.ok(productoService.editarProducto(id, productoDTO));
     }
