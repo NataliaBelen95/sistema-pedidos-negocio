@@ -1,6 +1,6 @@
 package com.haceTuPedido.pedidosDeAlmacen.enums;
 
-public enum UnidadMedida {
+public enum EnumUnidadMedida {
     UNIDAD,
     KG,
     GR,

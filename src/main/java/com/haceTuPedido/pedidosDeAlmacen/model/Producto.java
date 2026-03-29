@@ -1,6 +1,6 @@
 package com.haceTuPedido.pedidosDeAlmacen.model;
 
-import com.haceTuPedido.pedidosDeAlmacen.enums.UnidadMedida;
+import com.haceTuPedido.pedidosDeAlmacen.enums.EnumUnidadMedida;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +20,7 @@ public class Producto {
     private Categoria categoria;
     private String marca;
     @Enumerated(EnumType.STRING)
-    private UnidadMedida unidadMedida;
+    private EnumUnidadMedida enumUnidadMedida;
     private double peso;
 
 

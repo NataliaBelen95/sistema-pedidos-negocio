@@ -33,7 +33,8 @@ public class ProductoService implements IProductoService {
                 .nombre(productoDto.getNombre())
                 .categoria(categoria)
 //                .precio(productoDto.getPrecio())
-                .unidadMedida(productoDto.getUnidadMedida())
+                .marca(productoDto.getMarca())
+                .enumUnidadMedida(productoDto.getEnumUnidadMedida())
                 .peso(productoDto.getPeso())
                 .build();
         return Mapper.toDTO(repo.save(producto));
@@ -49,7 +50,7 @@ public class ProductoService implements IProductoService {
            p.setNombre(productoDto.getNombre());
            p.setCategoria(categoria);
 //           p.setPrecio(productoDto.getPrecio());
-           p.setUnidadMedida(productoDto.getUnidadMedida());
+           p.setEnumUnidadMedida(productoDto.getEnumUnidadMedida());
            p.setPeso(productoDto.getPeso());
 
            return Mapper.toDTO(repo.save(p));

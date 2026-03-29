@@ -1,5 +1,6 @@
 package com.haceTuPedido.pedidosDeAlmacen.controller;
 
+
 import com.haceTuPedido.pedidosDeAlmacen.dto.NegocioDTO;
 import com.haceTuPedido.pedidosDeAlmacen.dto.ProductoDTO;
 import com.haceTuPedido.pedidosDeAlmacen.service.INegocioService;
@@ -11,11 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.util.List;
 
-public class NegocioController {
+
 
     @RestController
     @RequestMapping("/api/negocios")
-    public class ProductoController {
+    public class NegocioController {
 
         @Autowired
         private INegocioService negocioService;
@@ -44,4 +45,4 @@ public class NegocioController {
             return ResponseEntity.noContent().build();
         }
     }
-}
+

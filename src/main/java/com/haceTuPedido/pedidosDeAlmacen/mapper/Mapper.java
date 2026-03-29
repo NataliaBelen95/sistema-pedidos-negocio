@@ -1,6 +1,7 @@
 package com.haceTuPedido.pedidosDeAlmacen.mapper;
 
 import com.haceTuPedido.pedidosDeAlmacen.dto.*;
+import com.haceTuPedido.pedidosDeAlmacen.enums.EnumUnidadMedida;
 import com.haceTuPedido.pedidosDeAlmacen.model.*;
 
 import java.util.stream.Collectors;
@@ -16,6 +17,7 @@ public class Mapper {
         return NegocioDTO.builder()
                 .id(negocio.getId())
                 .nombre(negocio.getNombre())
+                .direccion(negocio.getDireccion())
                 .build();
     }
 
@@ -28,7 +30,7 @@ public class Mapper {
             .nombre(produto.getNombre())
             .categoriaId(produto.getCategoria().getId())
             .marca(produto.getMarca())
-            .unidadMedida(produto.getUnidadMedida())
+            .enumUnidadMedida(produto.getEnumUnidadMedida())
             .peso(produto.getPeso())
             .build();
     }
@@ -75,6 +77,8 @@ public class Mapper {
 
 
     }
+
+    /*categoria DTO***/
     public static CategoriaDTO toDTO(Categoria categoria) {
 
         return CategoriaDTO.builder()
@@ -83,6 +87,8 @@ public class Mapper {
 
                 .build();
     }
+
+
 
 
 //    //Mapeo DetallesPedido a detalle pedidoDTOw

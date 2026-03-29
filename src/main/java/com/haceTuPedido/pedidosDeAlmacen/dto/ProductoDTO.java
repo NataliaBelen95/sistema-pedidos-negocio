@@ -1,8 +1,7 @@
 package com.haceTuPedido.pedidosDeAlmacen.dto;
 
 
-import com.haceTuPedido.pedidosDeAlmacen.model.Categoria;
-import com.haceTuPedido.pedidosDeAlmacen.enums.UnidadMedida;
+import com.haceTuPedido.pedidosDeAlmacen.enums.EnumUnidadMedida;
 import lombok.*;
 
 @Getter
@@ -18,6 +17,6 @@ public class ProductoDTO {
     private Long categoriaId;
     private String marca;
     private double peso;
-    private UnidadMedida unidadMedida;
+    private EnumUnidadMedida enumUnidadMedida;
 
 }
