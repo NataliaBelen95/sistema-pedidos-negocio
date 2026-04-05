@@ -1,0 +1,27 @@
+// --- COLORES DE FONDO (El blanco que no duele) ---
+$bg-app: #f8f9fa;       
+$bg-cards: #ffffff;  // Con S
+$bg-card: #ffffff;   // Sin S (Alias para que no falle el Dashboard)
+$bg-principal: #f8f9fa; 
+
+// --- COLORES DE ACCIÓN ---
+$color-primario: #0984e3;
+$color-user: #0984e3;
+$color-hover: #e3f2fd;
+$color-exito: #00b894;
+$color-success: #00b894;
+$color-peligro: #d63031;
+$color-danger: #d63031;
+
+// --- TEXTOS ---
+$text-main: #2d3436;
+$text-muted: #636e72;
+$color-texto: #333333;
+
+// --- BORDES Y SOMBRAS ---
+$color-border: #dfe6e9;
+$borde-suave: #dfe6e9;
+$radius-main: 12px;
+$radius-card: 12px;
+$shadow-suave: 0 4px 6px rgba(0, 0, 0, 0.05);
+$shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);

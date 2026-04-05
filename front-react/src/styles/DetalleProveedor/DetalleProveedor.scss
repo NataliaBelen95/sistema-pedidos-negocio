@@ -1,0 +1,80 @@
+@use '../variables' as *;
+
+.detalle-proveedor-content {
+  // Sacamos el max-width y el margin auto 
+  // porque ahora depende del padre (Dashboard)
+  width: 100%; 
+  padding: 20px; 
+  background-color: $bg-cards; // Usamos tu variable de blanco suave
+  border-radius: $radius-card;
+  box-shadow: $shadow-suave;
+
+  .header-proveedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $color-primario; // Tu azul de usuario/acción
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0;
+      color: $color-texto;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th { 
+      background: $bg-principal; // El blanco que no duele
+      color: $text-muted;
+      text-align: left;
+      padding: 12px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    td { 
+      border-bottom: 1px solid $borde-suave; // Tu grisecito resaltado
+      padding: 15px 12px;
+      color: $color-texto;
+    }
+
+    tr:hover {
+      background-color: rgba($color-primario, 0.05); // Un sutil celeste al pasar el mouse
+    }
+  }
+.acciones-detalle {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer-acciones {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start; // Alineados a la izquierda
+    gap: 15px;
+
+    .btn-nuevo-pedido {
+      background-color: $color-success; // Verde: Acción positiva
+    }
+
+    .btn-historial {
+      background-color: $color-user; // Azul: Información/Navegación
+    }
+
+    .btn-editar {
+      background-color: transparent;
+      color: $text-muted;
+      border: 1px solid $color-border;
+      
+      &:hover {
+        background-color: $bg-app;
+        color: $text-main;
+      }
+    }
+  }
+} 

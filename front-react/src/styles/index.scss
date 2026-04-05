@@ -1,0 +1,37 @@
+@import 'variables'; // Importamos el archivo anterior
+
+body {
+  background-color: $bg-principal;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $color-texto;
+  margin: 0;
+  padding: 0;
+}
+
+// Estilo para tus cards del Dashboard
+.card-proveedor {
+  background-color: $bg-cards;
+  border: 1px solid $borde-suave;
+  border-radius: $radius-card;
+  box-shadow: $shadow-suave;
+  padding: 20px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px); // Efecto sutil al pasar el mouse
+    border-color: $color-primario;
+  }
+}
+
+// Botones estándar
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &.confirmar { background-color: $color-exito; color: white; }
+  &.cancelar { background-color: $color-peligro; color: white; }
+  &.primario { background-color: $color-primario; color: white; }
+}

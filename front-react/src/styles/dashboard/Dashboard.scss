@@ -1,0 +1,52 @@
+@use '../variables' as *;
+
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  background-color: $bg-app;
+
+  .sidebar {
+    width: 260px;
+    background-color: $bg-card;
+    border-right: 1px solid $color-border;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .user-profile {
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: $color-hover;
+      border-radius: 8px;
+      color: $color-user;
+      font-weight: bold;
+    }
+
+    .item-proveedor {
+      padding: 12px 15px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover { background-color: $bg-app; }
+      &.active { 
+        background-color: $color-user; 
+        color: white; 
+        font-weight: bold;
+      }
+    }
+  }
+
+  .content-area {
+    flex: 1; // Toma todo el espacio restante
+    padding: 40px;
+    overflow-y: auto; // Por si la tabla de productos es muy larga
+  }
+
+  .vacio-state {
+    text-align: center;
+    margin-top: 100px;
+    color: #b2bec3;
+  }
+}
