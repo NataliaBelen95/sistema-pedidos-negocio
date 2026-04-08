@@ -12,5 +12,5 @@ public interface ProductoProveedorRepository extends JpaRepository<ProductoProve
 
     List<ProductoProveedorDTO> findByProveedorId(Long proveedorId);
     List<ProductoProveedorDTO> findByProductoIdOrderByPrecioAsc(Long productoId);
-
+    List<ProductoProveedor> findByProductoId(Long idProducto);
 }

@@ -44,5 +44,6 @@ import java.util.List;
             negocioService.eliminarNegocio(id);
             return ResponseEntity.noContent().build();
         }
+
     }
 

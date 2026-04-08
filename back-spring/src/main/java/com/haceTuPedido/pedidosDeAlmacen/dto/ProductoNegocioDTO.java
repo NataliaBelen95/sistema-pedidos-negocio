@@ -17,7 +17,9 @@ public class ProductoNegocioDTO {
     private double precioVenta;
 
     private Long idNegocio;
+    private String nombreNegocio;
     private Long idProducto;
+    private String nombreProducto;
 
 
 

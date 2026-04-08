@@ -12,16 +12,20 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/negocio/productos")
+@RequestMapping("/api/negocio-productos")
 public class ProductoNegocioController {
 
 
     @Autowired
     private IProductoNegocioService productoNegocioService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductoNegocioDTO> traerProductoPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(productoNegocioService.findById(id));
-
+    @GetMapping("/detalle-producto/{idProductoNegocio}")
+    public ResponseEntity<ProductoNegocioDTO> traerPorId(@PathVariable Long idProductoNegocio) {
+        return ResponseEntity.ok(productoNegocioService.findById(idProductoNegocio));
     }
+    @GetMapping("/{idNegocio}/{idProducto}/stock")
+    public ResponseEntity<ProductoNegocioDTO> obtenerStock(@PathVariable Long idProducto, @PathVariable Long idNegocio) {
+        return ResponseEntity.ok(productoNegocioService.obtenerStockPorProducto(idProducto, idNegocio));
+    }
+
 }

@@ -59,6 +59,7 @@ public class Mapper {
                 .nombreProducto(pp.getProducto().getNombre()) // Muy útil para la tabla
                 .nombreProveedor(pp.getProveedor().getNombre()) // Muy útil para comparar
                 .precio(pp.getPrecio())
+                .marca(pp.getProducto().getMarca())
                 .build();
     }
 
@@ -69,7 +70,9 @@ public class Mapper {
                 .idProductoNegocio(pn.getId()) // <--- ESTE ES EL QUE FALTABA
                 .idProducto(pn.getProducto().getId())
                 .idNegocio(pn.getNegocio().getId())
+                .nombreNegocio(pn.getNegocio().getNombre())
                 .stock(pn.getStock())
+                .nombreProducto(pn.getProducto().getNombre())
                 .build();
     }
 

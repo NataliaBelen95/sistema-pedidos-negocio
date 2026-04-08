@@ -1,0 +1,13 @@
+# Java
+target/
+*.class
+.mvn/
+
+# Node / React
+node_modules/
+build/
+.env.local
+
+# IntelliJ
+.idea/
+*.iml

@@ -12,5 +12,5 @@ import java.util.List;
 public interface IProductoProveedorService {
     List<ProductoProveedorDTO> traerProductosDelProveedor();
     ProductoProveedorDTO asignarProductoAProveedor(ProductoProveedorDTO productoProveedorDTO);
-
+    List<ProductoProveedorDTO> traerPrecioDelProductoConSuProveedor(Long idProducto);
 }

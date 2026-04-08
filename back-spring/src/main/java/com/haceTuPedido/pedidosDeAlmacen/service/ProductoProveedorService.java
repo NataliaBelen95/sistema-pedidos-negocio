@@ -1,6 +1,7 @@
 package com.haceTuPedido.pedidosDeAlmacen.service;
 
 import com.haceTuPedido.pedidosDeAlmacen.dto.ProductoProveedorDTO;
+import com.haceTuPedido.pedidosDeAlmacen.exception.NotFoundException;
 import com.haceTuPedido.pedidosDeAlmacen.mapper.Mapper;
 import com.haceTuPedido.pedidosDeAlmacen.model.Producto;
 import com.haceTuPedido.pedidosDeAlmacen.model.ProductoProveedor;
@@ -44,6 +45,21 @@ public class ProductoProveedorService implements IProductoProveedorService {
 
         // se devuelve el DTO
         return Mapper.toDTO(repo.save(relacion));
+    }
+
+
+    @Override
+    public List<ProductoProveedorDTO> traerPrecioDelProductoConSuProveedor(Long idProducto) {
+
+        List<ProductoProveedor> ofertas = repo.findByProductoId(idProducto);
+
+        if (ofertas.isEmpty()) {
+            throw new NotFoundException("No hay proveedores que vendan el producto con ID: " + idProducto);
+        }
+
+        return ofertas.stream()
+                .map(Mapper::toDTO)
+                .toList();
     }
     }
 
